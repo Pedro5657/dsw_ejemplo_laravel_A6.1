@@ -6,8 +6,7 @@
     Crear producto
   </div>
   <div class="card-body">
-
-    <form method="POST" action="{{route("admin.product.create")}}">
+    <form method="POST" action="{{route("admin.product.create")}}" enctype="multipart/form-data">
       @csrf
       <div class="row">
         <div class="col">
@@ -32,6 +31,13 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Imagen:</label>
+				<input name="image" type="file" class="form-control">
+				@error("image")
+					<p style="color:red">{{ $message }}</p>
+				@enderror
       </div>
       <div class="mb-3">
         <label class="form-label">Descripción</label>
@@ -60,12 +66,14 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>[ ID ]</td>
-          <td>[ NOMBRE ]</td>
-          <td><a href="#">Editar</a></td>
-          <td><a href="#">Eliminar</a></td>
-        </tr>
+				@foreach ($viewData["products"] as $product)
+					<tr>
+						<td>{{ $product->getId() }}</td>
+						<td>{{ $product->getName() }}</td>
+						<td><a href="#">Editar</a></td>
+						<td><a href="#">Eliminar</a></td>
+					</tr>
+				@endforeach
       </tbody>
     </table>
   </div>
