@@ -19,3 +19,5 @@ Route::get('/products/{id}', 'App\Http\Controllers\ProductController@show')->nam
 Route::get('/admin', 'App\Http\Controllers\Admin\AdminHomeController@index')->name("admin.home.index");
 Route::get('/admin/products', 'App\Http\Controllers\Admin\AdminProductController@index')->name("admin.product.index");
 Route::post('/admin/products/create','App\Http\Controllers\Admin\AdminProductController@create')->name('admin.product.create');
+Route::get('/admin/products/{id}/delete','App\Http\Controllers\Admin\AdminProductController@delete')->name('admin.product.delete');
+Route::delete('/admin/products/{id}/destroy','App\Http\Controllers\Admin\AdminProductController@destroy')->name('admin.product.destroy');

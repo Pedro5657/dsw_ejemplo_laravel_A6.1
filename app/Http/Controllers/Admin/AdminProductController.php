@@ -38,6 +38,17 @@ class AdminProductController extends Controller
 			$product->setImage($imageName);
 			$product->save();
 			//Generar un nombre hash para la imagen es más seguro que utilizar su nombre original.
-			return redirect()->route("admin.product.index")->with("success","Product created successfully");
+			return redirect()->route("admin.product.index");
+		}
+
+		public function delete(int $id)
+		{
+			return view("admin.product.delete")->with("product",Product::find($id));
+		}
+
+		public function destroy(int $id)
+		{
+			Product::destroy($id);
+			return redirect()->route("admin.product.index");
 		}
 }

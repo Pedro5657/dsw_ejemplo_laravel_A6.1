@@ -3,19 +3,18 @@
 
 <!-- Inyectamos el texto que contiene el título en el yield "title" -->
 @section("title", $viewData["title"])
-
 <!-- Inyectamos el texto con el contenido de la página en el yield "content" -->
 @section('content') 
 
     <div class="row">
         <div class="col-md-6 col-lg-4 mb-2">
-            <img src="{{ asset("/img/game.png") }}" class="img-fluid rounded">
+            <img src="{{ asset("/storage/game.png") }}" class="img-fluid rounded">
         </div>
         <div class="col-md-6 col-lg-4 mb-2">
-            <img src="{{ asset("/img/safe.png") }}" class="img-fluid rounded">
+            <img src="{{ asset("/storage/safe.png") }}" class="img-fluid rounded">
         </div>
         <div class="col-md-6 col-lg-4 mb-2">
-            <img src="{{ asset("/img/submarine.png") }}" class="img-fluid rounded">
+            <img src="{{ asset("/storage/submarine.png") }}" class="img-fluid rounded">
         </div>
     </div>
 
