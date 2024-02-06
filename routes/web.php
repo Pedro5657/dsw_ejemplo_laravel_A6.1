@@ -21,3 +21,5 @@ Route::get('/admin/products', 'App\Http\Controllers\Admin\AdminProductController
 Route::post('/admin/products/create','App\Http\Controllers\Admin\AdminProductController@create')->name('admin.product.create');
 Route::get('/admin/products/{id}/delete','App\Http\Controllers\Admin\AdminProductController@delete')->name('admin.product.delete');
 Route::delete('/admin/products/{id}/destroy','App\Http\Controllers\Admin\AdminProductController@destroy')->name('admin.product.destroy');
+Route::get('/admin/products/{id}/edit','App\Http\Controllers\Admin\AdminProductController@edit')->name('admin.product.edit');
+Route::put('/admin/products/{id}/update','App\Http\Controllers\Admin\AdminProductController@update')->name('admin.product.update');

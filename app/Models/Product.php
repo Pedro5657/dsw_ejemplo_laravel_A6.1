@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
+		protected $fillable = ["name", "price", "description", "image"];
 
 		public function getId(): int
 		{
@@ -19,6 +20,16 @@ class Product extends Model
 			return $this->name;
 		}
 		
+		public function getPrice(): int
+		{
+			return $this->price;
+		}
+
+		public function getDescription(): string
+		{
+			return $this->description;
+		}
+
 		public function getImage(): string
 		{
 			return $this->image;

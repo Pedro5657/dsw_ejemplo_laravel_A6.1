@@ -70,7 +70,7 @@
 					<tr>
 						<td>{{ $product->getId() }}</td>
 						<td>{{ $product->getName() }}</td>
-						<td><a href="#">Editar</a></td>
+						<td><a href="{{route("admin.product.edit",$product->getId())}}">Editar</a></td>
 						<td><a href="{{route('admin.product.delete',$product->getId())}}">Eliminar</a></td>
 					</tr>
 				@endforeach
